@@ -1,0 +1,530 @@
+:root {
+    --bg: #0f1012;
+    --surface: #17191d;
+    --surface-2: #1d2025;
+    --text: #f3efe7;
+    --muted: #b8afa3;
+    --line: rgba(255, 255, 255, 0.08);
+    --accent: #d9b98d;
+    --accent-strong: #f0c48c;
+    --success: #8fc7a0;
+    --shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+    --radius-xl: 28px;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --max-width: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background:
+            radial-gradient(circle at top right, rgba(217, 185, 141, 0.12), transparent 26%),
+            radial-gradient(circle at bottom left, rgba(143, 199, 160, 0.08), transparent 20%),
+            var(--bg);
+    color: var(--text);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.page-shell {
+    width: min(calc(100% - 40px), var(--max-width));
+    margin: 0 auto;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 0 16px;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to bottom, rgba(15, 16, 18, 0.95), rgba(15, 16, 18, 0.75), transparent);
+    backdrop-filter: blur(10px);
+    z-index: 30;
+}
+
+.brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-link,
+.nav-button,
+.primary-button,
+.secondary-button {
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.nav-link {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: var(--text);
+}
+
+.nav-button,
+.primary-button {
+    background: var(--accent);
+    color: #121212;
+    font-weight: 600;
+    padding: 14px 22px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-button:hover,
+.primary-button:hover {
+    background: var(--accent-strong);
+    transform: translateY(-1px);
+}
+
+.secondary-button {
+    color: var(--text);
+    border: 1px solid var(--line);
+    padding: 14px 22px;
+    border-radius: 999px;
+}
+
+.secondary-button:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 44px;
+    padding: 54px 0 36px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.hero h1,
+.section-heading h2,
+.waitlist-copy h2 {
+    margin: 0;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    max-width: 10ch;
+}
+
+.hero-text,
+.section-heading p,
+.proof-strip p,
+.level-card p,
+.benefit-card p,
+.waitlist-copy p,
+.launch-note,
+.form-note,
+.site-footer p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.hero-text {
+    font-size: 1.08rem;
+    margin: 22px 0 28px;
+    max-width: 60ch;
+}
+
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.hero-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.hero-points li {
+    position: relative;
+    padding-left: 28px;
+    color: var(--text);
+}
+
+.hero-points li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--success);
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+}
+
+.hero-visual {
+    position: relative;
+    min-height: 520px;
+}
+
+.visual-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.main-card {
+    height: 100%;
+    padding: 24px;
+}
+
+.floating-card {
+    position: absolute;
+    width: 220px;
+    padding: 16px;
+    backdrop-filter: blur(8px);
+}
+
+.top-card {
+    top: -22px;
+    right: -10px;
+}
+
+.bottom-card {
+    bottom: 20px;
+    left: -16px;
+}
+
+.card-label {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+}
+
+.art-grid,
+.mini-grid {
+    border-radius: 20px;
+    background: #111215;
+}
+
+.art-grid {
+    height: 100%;
+    min-height: 420px;
+    background:
+            linear-gradient(135deg, rgba(217, 185, 141, 0.9), rgba(104, 85, 58, 0.2)),
+            linear-gradient(45deg, rgba(255, 255, 255, 0.05), transparent 40%),
+            repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 36px),
+            repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 36px),
+            #15171b;
+}
+
+.art-grid-one {
+    position: relative;
+}
+
+.art-grid-one::before,
+.art-grid-one::after,
+.mini-grid::before,
+.mini-grid::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.art-grid-one::before {
+    background:
+            radial-gradient(circle at 30% 30%, rgba(255,255,255,0.22), transparent 18%),
+            radial-gradient(circle at 72% 62%, rgba(143, 199, 160, 0.18), transparent 18%),
+            linear-gradient(135deg, transparent 0 40%, rgba(15,16,18,0.25) 40% 60%, transparent 60%);
+}
+
+.mini-grid {
+    height: 180px;
+    position: relative;
+    background:
+            repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 22px),
+            repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 22px),
+            #14161a;
+}
+
+.mini-grid-two::before {
+    background:
+            radial-gradient(circle at 40% 35%, rgba(217, 185, 141, 0.5), transparent 22%),
+            linear-gradient(180deg, transparent 0 38%, rgba(255,255,255,0.07) 38% 40%, transparent 40% 100%);
+}
+
+.mini-grid-four::before {
+    background:
+            radial-gradient(circle at 65% 55%, rgba(240, 196, 140, 0.36), transparent 18%),
+            radial-gradient(circle at 30% 72%, rgba(143, 199, 160, 0.2), transparent 20%);
+}
+
+.proof-strip,
+.section,
+.waitlist-section {
+    border-top: 1px solid var(--line);
+}
+
+.proof-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 28px 0 12px;
+}
+
+.proof-strip strong {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin-bottom: 40px;
+}
+
+.section-heading h2,
+.waitlist-copy h2 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    margin-bottom: 16px;
+}
+
+.section-heading.compact {
+    margin-bottom: 28px;
+}
+
+.levels-grid,
+.benefits-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.levels-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.level-card,
+.benefit-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 26px;
+}
+
+.level-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(217, 185, 141, 0.14);
+    color: var(--accent);
+    font-size: 0.86rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.level-card h3,
+.benefit-card h3 {
+    margin: 0 0 12px;
+    font-size: 1.16rem;
+}
+
+.waitlist-section {
+    padding: 90px 0 110px;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.waitlist-copy {
+    position: sticky;
+    top: 110px;
+}
+
+.launch-note {
+    margin-top: 22px;
+    padding: 18px 20px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--line);
+}
+
+.waitlist-form {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
+
+.waitlist-form label {
+    display: block;
+    margin: 0 0 10px;
+    font-weight: 600;
+}
+
+.waitlist-form input,
+.waitlist-form select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    border-radius: 14px;
+    padding: 16px 16px;
+    margin-bottom: 18px;
+    font: inherit;
+    outline: none;
+}
+
+.waitlist-form input:focus,
+.waitlist-form select:focus {
+    border-color: rgba(217, 185, 141, 0.7);
+    box-shadow: 0 0 0 4px rgba(217, 185, 141, 0.12);
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.form-note,
+.form-message {
+    margin: 14px 0 0;
+    font-size: 0.92rem;
+}
+
+.form-message {
+    min-height: 24px;
+}
+
+.form-message.success {
+    color: var(--success);
+}
+
+.form-message.error {
+    color: #ff9c9c;
+}
+
+.site-footer {
+    padding: 22px 0 50px;
+    border-top: 1px solid var(--line);
+}
+
+@media (max-width: 1100px) {
+    .hero,
+    .waitlist-section,
+    .levels-grid,
+    .benefits-grid,
+    .proof-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+        min-height: 460px;
+    }
+
+    .waitlist-copy {
+        position: static;
+    }
+}
+
+@media (max-width: 720px) {
+    .page-shell {
+        width: min(calc(100% - 28px), var(--max-width));
+    }
+
+    .site-header {
+        padding-top: 18px;
+        gap: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hero {
+        padding-top: 34px;
+    }
+
+    .hero h1 {
+        max-width: 12ch;
+    }
+
+    .hero-visual {
+        min-height: 380px;
+    }
+
+    .floating-card {
+        width: 180px;
+    }
+
+    .main-card {
+        padding: 18px;
+    }
+
+    .section,
+    .waitlist-section {
+        padding: 72px 0;
+    }
+
+    .waitlist-form {
+        padding: 22px;
+    }
+}
+
+
+
