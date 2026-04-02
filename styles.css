@@ -526,10 +526,15 @@ img {
     }
 }
 .logo-img {
-    height: 32px;
-    width: auto;
-    display: block;
-    opacity: 0.95;
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.logo-img:hover {
+  filter: brightness(1.2) contrast(1.2);
 }
 
 
