@@ -525,6 +525,10 @@ img {
         padding: 22px;
     }
 }
-
+.logo-img {
+    height: 28px;
+    width: auto;
+    display: block;
+}
 
 

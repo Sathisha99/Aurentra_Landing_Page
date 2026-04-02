@@ -58,4 +58,4 @@ function setMessage(text, type) {
     if (!message) return;
     message.textContent = text;
     message.className = `form-message ${type}`;
-} 
+}
