@@ -14,15 +14,20 @@ if (form) {
 
         const formData = new FormData(form);
         const payload = {
-  name: (formData.get('name') || '').toString().trim(),
-  email: (formData.get('email') || '').toString().trim(),
-  interest: (formData.get('interest') || '').toString().trim(),
-  purchaseIntent: (formData.get('purchaseIntent') || '').toString().trim(),
-  source: "aurentra-landing-page"
-};
+            name: (formData.get('name') || '').toString().trim(),
+            email: (formData.get('email') || '').toString().trim(),
+            interest: (formData.get('interest') || '').toString().trim(),
+            purchaseIntent: (formData.get('purchaseIntent') || '').toString().trim(),
+            source: "aurentra-landing-page"
+        };
 
         if (!payload.email || !isValidEmail(payload.email)) {
             setMessage('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        if (!payload.purchaseIntent) {
+            setMessage('Please select your purchase interest.', 'error');
             return;
         }
 
@@ -40,22 +45,17 @@ if (form) {
             const result = await response.json();
 
             if (result.success) {
-                if (result.success) {
-  form.reset();
+                form.reset();
+                form.style.display = "none";
 
-  form.style.display = "none";
+                const thankYou = document.getElementById("thankYouMessage");
+                if (thankYou) {
+                    thankYou.classList.remove("hidden");
 
-  const thankYou = document.getElementById("thankYouMessage");
-
-  if (thankYou) {
-    thankYou.classList.remove("hidden");
-
-    setTimeout(() => {
-      thankYou.classList.add("show");
-    }, 50);
-  }
-
-} else {;
+                    setTimeout(() => {
+                        thankYou.classList.add("show");
+                    }, 50);
+                }
             } else {
                 setMessage('Something went wrong. Please try again.', 'error');
             }
