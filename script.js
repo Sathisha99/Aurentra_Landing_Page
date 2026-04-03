@@ -2,7 +2,7 @@ const form = document.getElementById('waitlistForm');
 const message = document.getElementById('formMessage');
 const year = document.getElementById('year');
 
-const SCRIPT_URL = https://script.google.com/macros/s/AKfycbwAXv0rvHQg9yy_Jvf1mG5auouUizwSL_y0RPAsP8Mi6u2pW26Otv-JPXMPeVse5l8J/exec;
+const SCRIPT_URL = https://script.google.com/macros/s/AKfycbwG-gbn9UucdEalUzMhSPvXDYCeDTfhFMgeShJ_KvbOLGdYJguo254eB1ZDYI8Wl7P3XA/exec;
 
 if (year) {
     year.textContent = new Date().getFullYear();
