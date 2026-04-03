@@ -40,8 +40,22 @@ if (form) {
             const result = await response.json();
 
             if (result.success) {
-                form.reset();
-                setMessage('Thanks — you are on the waitlist.', 'success');
+                if (result.success) {
+  form.reset();
+
+  form.style.display = "none";
+
+  const thankYou = document.getElementById("thankYouMessage");
+
+  if (thankYou) {
+    thankYou.classList.remove("hidden");
+
+    setTimeout(() => {
+      thankYou.classList.add("show");
+    }, 50);
+  }
+
+} else {;
             } else {
                 setMessage('Something went wrong. Please try again.', 'error');
             }
