@@ -536,5 +536,32 @@ img {
 .logo-img:hover {
   filter: brightness(1.2) contrast(1.2);
 }
+.hidden {
+  display: none;
+}
 
+.thank-you {
+  text-align: center;
+  margin-top: 30px;
+  padding: 30px;
+  border: 1px solid rgba(212, 194, 152, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.thank-you h3 {
+  font-size: 28px;
+  color: #D4C298;
+  margin-bottom: 10px;
+}
+
+.thank-you p {
+  color: #ddd;
+  font-size: 16px;
+}
+
+.thank-you .subtle {
+  font-size: 14px;
+  opacity: 0.7;
+}
 
