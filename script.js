@@ -2,7 +2,7 @@ const form = document.getElementById('waitlistForm');
 const message = document.getElementById('formMessage');
 const year = document.getElementById('year');
 
-const SCRIPT_URL = https://script.google.com/macros/s/AKfycbwG-gbn9UucdEalUzMhSPvXDYCeDTfhFMgeShJ_KvbOLGdYJguo254eB1ZDYI8Wl7P3XA/exec;
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwG-gbn9UucdEalUzMhSPvXDYCeDTfhFMgeShJ_KvbOLGdYJguo254eB1ZDYI8Wl7P3XA/exec";
 
 if (year) {
     year.textContent = new Date().getFullYear();
@@ -14,10 +14,12 @@ if (form) {
 
         const formData = new FormData(form);
         const payload = {
-            name: (formData.get('name') || '').toString().trim(),
-            email: (formData.get('email') || '').toString().trim(),
-            interest: (formData.get('interest') || '').toString().trim()
-        };
+  name: (formData.get('name') || '').toString().trim(),
+  email: (formData.get('email') || '').toString().trim(),
+  interest: (formData.get('interest') || '').toString().trim(),
+  purchaseIntent: (formData.get('purchaseIntent') || '').toString().trim(),
+  source: "aurentra-landing-page"
+};
 
         if (!payload.email || !isValidEmail(payload.email)) {
             setMessage('Please enter a valid email address.', 'error');
