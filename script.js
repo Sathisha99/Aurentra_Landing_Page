@@ -54,13 +54,12 @@ if (form) {
 
         setTimeout(() => {
             thankYou.classList.add("show");
-
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                event: "waitlist_success"
-            });
         }, 50);
     }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: 'waitlist_success'
+    });
 }
             else {
                 setMessage('Something went wrong. Please try again.', 'error');
