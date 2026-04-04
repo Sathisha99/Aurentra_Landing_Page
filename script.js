@@ -45,18 +45,24 @@ if (form) {
             const result = await response.json();
 
             if (result.success) {
-                form.reset();
-                form.style.display = "none";
+    form.reset();
+    form.style.display = "none";
 
-                const thankYou = document.getElementById("thankYouMessage");
-                if (thankYou) {
-                    thankYou.classList.remove("hidden");
+    const thankYou = document.getElementById("thankYouMessage");
+    if (thankYou) {
+        thankYou.classList.remove("hidden");
 
-                    setTimeout(() => {
-                        thankYou.classList.add("show");
-                    }, 50);
-                }
-            } else {
+        setTimeout(() => {
+            thankYou.classList.add("show");
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: "waitlist_success"
+            });
+        }, 50);
+    }
+}
+            else {
                 setMessage('Something went wrong. Please try again.', 'error');
             }
         } catch (error) {
